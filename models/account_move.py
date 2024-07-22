@@ -1,4 +1,3 @@
-# account_move.py dentro del directorio models
 from odoo import models, _
 from odoo.exceptions import ValidationError
 
@@ -43,6 +42,7 @@ class AccountMove(models.Model):
                     if latam_document_type_code in ['110', '111', '112']:
                         raise ValidationError(_('The tax payer type of this supplier is not entitled to deliver '
                                                 'imports documents'))
-                if (tax_payer_type == '4' or country_id.code != "CL") and latam_document_type_code != '46':
-                    raise ValidationError(_('You need a journal without the use of documents for foreign '
-                                            'suppliers'))
+                # Eliminamos la siguiente condición
+                # if (tax_payer_type == '4' or country_id.code != "CL") and latam_document_type_code != '46':
+                #     raise ValidationError(_('You need a journal without the use of documents for foreign '
+                #                             'suppliers'))
