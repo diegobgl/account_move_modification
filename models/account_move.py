@@ -1,5 +1,5 @@
-from odoo import models, api, _
-from odoo.exceptions import ValidationError
+# account_move.py dentro del directorio models
+from odoo import models
 
 class AccountMove(models.Model):
     _inherit = "account.move"
@@ -7,7 +7,7 @@ class AccountMove(models.Model):
     def _get_l10n_latam_documents_domain(self):
         self.ensure_one()
         if self.journal_id.company_id.account_fiscal_country_id != self.env.ref('base.cl') or not self.journal_id.l10n_latam_use_documents:
-            return super()._get_l10n_latam_documents_domain()
+            return super(AccountMove, self)._get_l10n_latam_documents_domain()
         if self.journal_id.type == 'sale':
             domain = [('country_id.code', '=', 'CL')]
             if self.move_type in ['in_invoice', 'out_invoice']:
