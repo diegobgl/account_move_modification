@@ -1,5 +1,6 @@
 # account_move.py dentro del directorio models
 from odoo import models, _
+from odoo.exceptions import ValidationError
 
 class AccountMove(models.Model):
     _inherit = "account.move"

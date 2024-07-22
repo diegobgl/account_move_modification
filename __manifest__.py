@@ -6,7 +6,7 @@
     'description': 'Este módulo modifica y hereda la función en account.move para eliminar una condición específica.',
     'author': 'I+D, Diego Gajardo, Camilo Neira, Diego Morales',
     'website': 'https://www.holdconet.com',
-    'depends': ['account'],
+    'depends': ['account', 'l10n_cl'],
     'data': [],
     'installable': True,
     'application': False,
